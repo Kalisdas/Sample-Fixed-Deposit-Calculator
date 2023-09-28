@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD calculator</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body id="body">
+    
+   <div class="box"><h1>FD calculator</h1>
+   
+   <div class="write">
+   <input type="text" id="input" placeholder="Tenure in months">
+
+<button type="submit" onclick="fDRate()">Calculate</button>
+<div id="result"></div>
+</div>
+</div>
+   <script>
+           function fDRate(){
+            const months = Number(document.getElementById('input').value)
+            // let rate = 0
+            if(months<3)
+              rate = 0
+
+            else if (months>=3 && months<=6)
+              rate = 6.5
+            else if (months>=7 && months<=9)
+            rate = 6.8
+            else 
+            rate = 7
+
+            let result = document.getElementById('result') 
+            result.innerHTML = 'your interest is '+rate+' %'
+           }
+    </script>
+</body>
+</html>
